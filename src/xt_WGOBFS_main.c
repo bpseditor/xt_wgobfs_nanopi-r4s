@@ -9,6 +9,7 @@
 #include "xt_WGOBFS.h"
 #include "wg.h"
 #include "chacha.h"
+#include <net/ip6_checksum.h> // need to linux-headers 4.19.232 (csum_ipv6_magic)
 
 #if IS_ENABLED(CONFIG_IP6_NF_IPTABLES)
 #include <net/ipv6.h>
