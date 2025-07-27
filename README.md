@@ -46,6 +46,12 @@ echo xt_WGOBFS | sudo tee /etc/modules-load.d/xt_wgobfs.conf
 
 ```
 
+select iptables legacy mode:
+sudo update-alternatives --config iptables
+sudo update-alternatives --config ip6tables
+sudo update-alternatives --config arptables
+sudo update-alternatives --config ebtables
+
 One may need run `depmod -a && modprobe xt_WGOBFS` to load the kernel module.
 
 By default, openSUSE does not allow unsupported kernel modeule. To override,
