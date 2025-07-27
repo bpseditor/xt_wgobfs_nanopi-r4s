@@ -37,7 +37,13 @@ make
 Install:
 
 ```shell
+
 sudo make install
+
+sudo cp src/xt_WGOBFS.ko /lib/modules/$(uname -r)/kernel/net/netfilter/
+sudo insmod /lib/modules/$(uname -r)/kernel/net/netfilter/xt_WGOBFS.ko
+echo xt_WGOBFS | sudo tee /etc/modules-load.d/xt_wgobfs.conf
+
 ```
 
 One may need run `depmod -a && modprobe xt_WGOBFS` to load the kernel module.
